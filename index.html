@@ -9,8 +9,45 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
@@ -21,7 +58,7 @@
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/html5shiv.js"></script>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -48,6 +85,27 @@
 <section id="competition" class="slide level2">
 <h2>Competition</h2>
 <p>There is <a href="https://play.google.com/store/apps/details?id=com.lovelyhq.android.lovelydocs&amp;hl=en">LovelyDocs</a> for android, but is using a very old webkit engine for rendering html, which cause html to load very slow and it is slow overall, and it does not have user contributed ones</p>
+</section>
+<section id="snippet-code" class="slide level2">
+<h2>Snippet Code</h2>
+</section>
+<section id="jsts" class="slide level2">
+<h2>JS/TS</h2>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="op">{</span>
+    <span class="st">&quot;docName&quot;</span><span class="op">:</span> <span class="st">&quot;Cordova&quot;</span><span class="op">,</span>
+    <span class="st">&quot;docPath&quot;</span><span class="op">:</span> <span class="st">&quot;https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/Cordova.zip?raw=true&quot;</span><span class="op">,</span>
+    <span class="st">&quot;docWebIndex&quot;</span><span class="op">:</span> <span class="st">&quot;cordova.apache.org/docs/en/latest/index.html&quot;</span>
+<span class="op">}</span></code></pre></div>
+</section>
+<section id="xml" class="slide level2">
+<h2>XML</h2>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;TabViewItem.view&gt;</span>
+    <span class="kw">&lt;ListView</span><span class="ot"> items=</span><span class="st">&quot;{{ officialDocListItems }}&quot;</span><span class="ot"> itemTap=</span><span class="st">&quot;{{ onItemTap }}&quot;</span> <span class="kw">&gt;</span>
+        <span class="kw">&lt;ListView.itemTemplate&gt;</span>
+            <span class="kw">&lt;Label</span><span class="ot"> text=</span><span class="st">&quot;{{ docName || &#39;Downloading...&#39; }}&quot;</span><span class="ot"> textWrap=</span><span class="st">&quot;true&quot;</span><span class="ot"> class=</span><span class="st">&quot;docName&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;/ListView.itemTemplate&gt;</span>
+    <span class="kw">&lt;/ListView&gt;</span>
+<span class="kw">&lt;/TabViewItem.view&gt;</span></code></pre></div>
 </section>
 <section id="what-went-successfull" class="slide level2">
 <h2>What went successfull</h2>
@@ -82,8 +140,8 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/js/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1js/reveal.js"></script>
 
   <script>
 
@@ -93,9 +151,9 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.js', async: true },
-              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.js', async: true }
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1plugin/zoom-js/zoom.js', async: true },
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1plugin/notes/notes.js', async: true }
         ]
       });
     </script>
