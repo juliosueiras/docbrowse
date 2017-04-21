@@ -92,11 +92,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="jsts" class="slide level2">
 <h2>JS/TS</h2>
-<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="op">{</span>
-    <span class="st">&quot;docName&quot;</span><span class="op">:</span> <span class="st">&quot;Cordova&quot;</span><span class="op">,</span>
-    <span class="st">&quot;docPath&quot;</span><span class="op">:</span> <span class="st">&quot;https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/Cordova.zip?raw=true&quot;</span><span class="op">,</span>
-    <span class="st">&quot;docWebIndex&quot;</span><span class="op">:</span> <span class="st">&quot;cordova.apache.org/docs/en/latest/index.html&quot;</span>
-<span class="op">}</span></code></pre></div>
+<pre class="ts"><code>import { EventData } from &#39;data/observable&#39;;
+import { Page } from &#39;ui/page&#39;;
+import * as platform from &quot;platform&quot;;
+import * as fs from &#39;file-system&#39;
+import * as http from &#39;http&#39;
+import { ViewModel } from &#39;./main-view-model&#39;; 
+let folder = fs.knownFolders.documents()
+
+interface DocListItem {
+    docName: string;
+    docPath: string;
+    docWebIndex: string;
+}
+
+export function navigatingTo(args: EventData) {
+    let page = &lt;Page&gt;args.object;
+
+    let docList = fs.File.fromPath(folder.path + &#39;/doc_list.json&#39;)
+    page.bindingContext = new ViewModel();
+}</code></pre>
+</section>
+<section id="json" class="slide level2">
+<h2>JSON</h2>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;docName&quot;</span><span class="fu">:</span> <span class="st">&quot;Cordova&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;docPath&quot;</span><span class="fu">:</span> <span class="st">&quot;https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/Cordova.zip?raw=true&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;docWebIndex&quot;</span><span class="fu">:</span> <span class="st">&quot;cordova.apache.org/docs/en/latest/index.html&quot;</span>
+<span class="fu">}</span></code></pre></div>
 </section>
 <section id="xml" class="slide level2">
 <h2>XML</h2>
@@ -154,7 +177,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         dependencies: [
           { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.js', async: true },
-              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1plugin/notes/notes.js', async: true }
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
