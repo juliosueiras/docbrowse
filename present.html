@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Julio Tain Sueiras">
+  <meta name="dcterms.date" content="2017-04-21">
+  <title>DocBrowse</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">DocBrowse</h1>
+  <p class="author">Julio Tain Sueiras</p>
+  <p class="date">2017-04-21</p>
+</section>
+
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<p>I always wanted a documentation browser for developer, and dashdocs is wonderful, but there isn't a full mobile solution(maybe a ios one, but not a full cross hybrid)</p>
+</section>
+<section id="usefullness" class="slide level2">
+<h2>Usefullness</h2>
+<ul>
+<li>150+ Documentation(from Dashdocs)</li>
+<li>281 User Contribute Docs</li>
+</ul>
+</section>
+<section id="competition" class="slide level2">
+<h2>Competition</h2>
+<p>There is <a href="https://play.google.com/store/apps/details?id=com.lovelyhq.android.lovelydocs&amp;hl=en">LovelyDocs</a> for android, but is using a very old webkit engine for rendering html, which cause html to load very slow and it is slow overall, and it does not have user contributed ones</p>
+</section>
+<section id="what-went-successfull" class="slide level2">
+<h2>What went successfull</h2>
+<p>The display of documentation and binding the listing to the app</p>
+</section>
+<section id="what-didnt-went-successfull" class="slide level2">
+<h2>What didn't went successfull</h2>
+<ul>
+<li>The Format(tgz)</li>
+</ul>
+</section>
+<section id="tech-stack" class="slide level2">
+<h2>Tech Stack</h2>
+<ul>
+<li>NativeScript</li>
+<li>TypeScript</li>
+</ul>
+</section>
+<section id="what-is-leftfor-the-afternoon" class="slide level2">
+<h2>What is left(for the afternoon)</h2>
+<ul>
+<li>Progress Bar</li>
+<li>Finish putting up the other docs</li>
+</ul>
+</section>
+<section id="get-it-now" class="slide level2">
+<h2>Get it now</h2>
+<p><a href="https://github.com/juliosueiras/docbrowse">Get it on Github</a></p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.js', async: true },
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
