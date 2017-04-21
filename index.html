@@ -54,11 +54,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/html5shiv.js"></script>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -92,26 +92,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="jsts" class="slide level2">
 <h2>JS/TS</h2>
-<pre class="ts"><code>import { EventData } from &#39;data/observable&#39;;
-import { Page } from &#39;ui/page&#39;;
-import * as platform from &quot;platform&quot;;
-import * as fs from &#39;file-system&#39;
-import * as http from &#39;http&#39;
-import { ViewModel } from &#39;./main-view-model&#39;; 
-let folder = fs.knownFolders.documents()
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="im">import</span> <span class="op">{</span> EventData <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;data/observable&#39;</span><span class="op">;</span>
+<span class="im">import</span> <span class="op">{</span> Page <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;ui/page&#39;</span><span class="op">;</span>
+<span class="im">import</span> <span class="op">*</span> <span class="im">as</span> platform <span class="im">from</span> <span class="st">&quot;platform&quot;</span><span class="op">;</span>
+<span class="im">import</span> <span class="op">*</span> <span class="im">as</span> fs <span class="im">from</span> <span class="st">&#39;file-system&#39;</span>
+<span class="im">import</span> <span class="op">*</span> <span class="im">as</span> http <span class="im">from</span> <span class="st">&#39;http&#39;</span>
+<span class="im">import</span> <span class="op">{</span> ViewModel <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./main-view-model&#39;</span><span class="op">;</span> 
+<span class="kw">let</span> folder <span class="op">=</span> <span class="va">fs</span>.<span class="va">knownFolders</span>.<span class="at">documents</span>()
 
-interface DocListItem {
-    docName: string;
-    docPath: string;
-    docWebIndex: string;
-}
+<span class="kw">interface</span> DocListItem <span class="op">{</span>
+    <span class="dt">docName</span><span class="op">:</span> string<span class="op">;</span>
+    <span class="dt">docPath</span><span class="op">:</span> string<span class="op">;</span>
+    <span class="dt">docWebIndex</span><span class="op">:</span> string<span class="op">;</span>
+<span class="op">}</span>
 
-export function navigatingTo(args: EventData) {
-    let page = &lt;Page&gt;args.object;
+<span class="im">export</span> <span class="kw">function</span> <span class="at">navigatingTo</span>(args<span class="op">:</span> EventData) <span class="op">{</span>
+    <span class="kw">let</span> page <span class="op">=</span> <span class="op">&lt;</span>Page<span class="op">&gt;</span><span class="va">args</span>.<span class="at">object</span><span class="op">;</span>
 
-    let docList = fs.File.fromPath(folder.path + &#39;/doc_list.json&#39;)
-    page.bindingContext = new ViewModel();
-}</code></pre>
+    <span class="kw">let</span> docList <span class="op">=</span> <span class="va">fs</span>.<span class="va">File</span>.<span class="at">fromPath</span>(<span class="va">folder</span>.<span class="at">path</span> <span class="op">+</span> <span class="st">&#39;/doc_list.json&#39;</span>)
+    <span class="va">page</span>.<span class="at">bindingContext</span> <span class="op">=</span> <span class="kw">new</span> <span class="at">ViewModel</span>()<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
 </section>
 <section id="json" class="slide level2">
 <h2>JSON</h2>
