@@ -1,4 +1,5 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ActionBar title="DocBrowse"></ActionBar>
     <TabView>
         <TabView.items>
             <TabViewItem title="Official Docs List">
