@@ -1,39 +1,86 @@
 import {Observable} from 'data/observable';
+import {Zip} from "nativescript-zip";
+import * as http from 'http'
+import * as fs from 'file-system'
+import * as frameModule from 'ui/frame'
+let folder = fs.knownFolders.documents()
 
-export class HelloWorldModel extends Observable {
+export class ViewModel extends Observable {
+    private _officialDocList = [
+        {"docName": "Bash","docPath": "https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/Bash.zip?raw=true", "docWebName": "bash/index.html"},
+        {"docName": "Ansible","docPath": "https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/Ansible.zip?raw=true", "docWebIndex": "docs.ansible.com/ansible/index.html"},
+        {"docName": "BackboneJS","docPath": "https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/BackboneJS.zip?raw=true", "docWebIndex": "index.html"},
+        {"docName": "AngularJS","docPath": "https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/AngularJS.zip?raw=true", "docWebIndex": "angular.io/docs/js/latest/index.html"},
+    ]
 
-    private _counter: number;
-    private _message: string;
+    private _currentDocPath;
+
+    private _userDocList = [
+        {"docName": "SDL","docPath": "https://github.com/juliosueiras/temp_dashdocs_feed/blob/master/SDL.zip?raw=true", "docWebIndex": "index.html"}
+    ]
+
 
     constructor() {
         super();
-
-        // Initialize default values.
-        this._counter = 42;
-        this.updateMessage();
     }
 
-    get message(): string {
-        return this._message;
-    }
-    
-    set message(value: string) {
-        if (this._message !== value) {
-            this._message = value;
-            this.notifyPropertyChange('message', value)
-        }
+    get officialDocListItems() {
+        return this._officialDocList
     }
 
-    public onTap() {
-        this._counter--;
-        this.updateMessage();
+    get userDocListItems() {
+        return this._userDocList
     }
 
-    private updateMessage() {
-        if (this._counter <= 0) {
-            this.message = 'Hoorraaay! You unlocked the NativeScript clicker achievement!';
-        } else {
-            this.message = `${this._counter} taps left`;
-        }
+    public onItemTapUser(args) {
+        let docPath = this._userDocList[args.index].docPath
+        let docName = this._userDocList[args.index].docName
+        let zipPath = fs.path.join(fs.knownFolders.temp().path,  docName + ".zip")
+        let dest = fs.path.join(fs.knownFolders.temp().path,  "/" + docName)
+
+        http.getFile(docPath, zipPath).then((res) => {
+            Zip.unzip(zipPath, dest);
+            this._currentDocPath = dest + '/' + docName + '.docset/Contents/Resources/Documents/' + this._userDocList[args.index].docWebIndex
+            console.log(this._currentDocPath)
+            frameModule.topmost().navigate({
+                moduleName: 'doc-view',
+                backstackVisible: true,
+                context: {
+                    docName: docName,
+                    docPath: this._currentDocPath
+                }
+            })
+        }).catch(function(e) {
+            console.log(e)
+        })
     }
+
+    public onItemTap(args) {
+        let docPath = this._officialDocList[args.index].docPath
+        let docName = this._officialDocList[args.index].docName
+        let zipPath = fs.path.join(fs.knownFolders.temp().path,  docName + ".zip")
+        let dest = fs.path.join(fs.knownFolders.temp().path,  "/" + docName)
+
+        http.getFile(docPath, zipPath).then((res) => {
+            Zip.unzip(zipPath, dest);
+            this._currentDocPath = dest + '/' + docName + '.docset/Contents/Resources/Documents/' + this._officialDocList[args.index].docWebIndex
+            console.log(this._currentDocPath)
+            frameModule.topmost().navigate({
+                moduleName: 'doc-view',
+                backstackVisible: true,
+                context: {
+                    docName: docName,
+                    docPath: this._currentDocPath
+                }
+            })
+        }).catch(function(e) {
+            console.log(e)
+        })
+    }
+
+    public getPathToIndex(args) {
+        console.log(args)
+        return this._currentDocPath
+    }
+
 }

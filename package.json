@@ -4,13 +4,25 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.docbrowse"
+    "id": "org.nativescript.docbrowse",
+    "tns-android": {
+      "version": "2.5.0"
+    }
   },
   "dependencies": {
+    "assert": "^1.4.1",
+    "nativescript-background-http": "^2.5.1",
     "nativescript-theme-core": "~1.0.2",
-    "tns-core-modules": "2.5.2"
+    "nativescript-zip": "^1.1.0",
+    "tar": "^2.2.1",
+    "tns-core-modules": "2.5.2",
+    "tns-platform-declarations": "^2.5.2"
   },
   "devDependencies": {
+    "babel-traverse": "6.24.1",
+    "babel-types": "6.24.1",
+    "babylon": "6.17.0",
+    "lazy": "1.0.11",
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.3.5",
     "typescript": "~2.1.0"

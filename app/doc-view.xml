@@ -1,0 +1,4 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <ActionBar title="{{ docName }}"></ActionBar>
+    <WebView src="{{ docPath }}" />
+</Page>

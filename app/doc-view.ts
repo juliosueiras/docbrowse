@@ -6,15 +6,11 @@ import * as http from 'http'
 import { ViewModel } from './main-view-model'; 
 let folder = fs.knownFolders.documents()
 
-interface DocListItem {
-    docName: string;
-    docPath: string;
-    docWebIndex: string;
-}
-
 export function navigatingTo(args: EventData) {
     let page = <Page>args.object;
 
+    console.log(args)
     let docList = fs.File.fromPath(folder.path + '/doc_list.json')
-    page.bindingContext = new ViewModel();
+    page.bindingContext = page.navigationContext;
 }
+

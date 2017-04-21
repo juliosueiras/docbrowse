@@ -5,11 +5,16 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noEmitHelpers": true,
-        "noEmitOnError": true
+        "noEmitOnError": false,
+        "lib": [
+            "es2016"
+        ]
     },
     "exclude": [
         "node_modules",
         "platforms",
-        "**/*.aot.ts"
+        "**/*.aot.ts",
+        "app/user_docs/",
+        "app/official_docs/"
     ]
 }
