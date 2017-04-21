@@ -11,4 +11,3 @@ tns --version
 # Prepare NativeScript Project
 echo "******** Prepare NativeScript iOS && Android Project *************"
 tns prepare android
-cp libs/plexus-archiver-3.4.jar platforms/android/
