@@ -12,7 +12,7 @@
             </TabViewItem>
             <TabViewItem title="User Docs List">
                 <TabViewItem.view>
-                    <ListView items="{{ userDocListItems }}" itemTap="{{ onItemTapUser }}">
+                    <ListView items="{{ userDocListItems }}">
                         <ListView.itemTemplate>
                             <Label text="{{ docName || 'Downloading...' }}" textWrap="true" class="docName" />
                         </ListView.itemTemplate>
