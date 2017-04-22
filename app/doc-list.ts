@@ -4,7 +4,6 @@ import * as platform from "platform";
 import * as fs from 'file-system'
 import * as http from 'http'
 import { ViewModel } from './main-view-model'; 
-import { WebView } from 'ui/web-view'
 let folder = fs.knownFolders.documents()
 
 export function navigatingTo(args: EventData) {
@@ -12,4 +11,5 @@ export function navigatingTo(args: EventData) {
 
     page.bindingContext = page.navigationContext;
 }
+
 

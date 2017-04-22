@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "assert": "^1.4.1",
+    "nativescript-advanced-webview": "^1.1.3",
     "nativescript-background-http": "^2.5.1",
     "nativescript-loading-indicator": "^2.3.2",
-    "nativescript-plugin-appcompat": "^22.2.1",
+    "nativescript-sqlite": "^1.1.3",
     "nativescript-theme-core": "~1.0.2",
     "nativescript-zip": "^1.1.0",
     "tar": "^2.2.1",
+    "tern": "^0.21.0",
     "tns-core-modules": "2.5.2",
     "tns-platform-declarations": "^2.5.2"
   },
