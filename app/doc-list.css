@@ -1,8 +1,8 @@
-.docName {
-    font-size: 40px;
-}
-
 ActionBar {
     background-color:  #3C5AFD;
     color: white;
+}
+
+.docName {
+    font-size: 30px;
 }

@@ -2,5 +2,9 @@
     <ActionBar title="{{ docName }}">
         <NavigationButton tap="{{ goBack }}" text="Back" android.systemIcon = "ic_menu_back"></NavigationButton>
     </ActionBar>
-    <WebView id="docItem" src="{{ docPath }}" />
+    <ListView items="{{ getListing }}" itemTap="{{ goToDoc }}" >
+        <ListView.itemTemplate>
+            <Label text="{{ name || 'Downloading...' }}" textWrap="true" class="docName" />
+        </ListView.itemTemplate>
+    </ListView>
 </Page>
